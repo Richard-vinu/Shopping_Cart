@@ -30,7 +30,9 @@ route.delete('/products/:productId',deleteProduct)
 
 // //!Cart Apis
 route.post('/users/:userId/cart',Authn,Authz,createCart)
-route.put('/users/:userId/cart',Authn,Authz,updateCart)
+
+route.put('/users/:userId/cart',updateCart)
+// route.put('/users/:userId/cart',Authn,Authz,updateCart)
 route.get('/users/:userId/cart',Authn,Authz,getCart)
 route.delete('/users/:userId/cart',Authn,Authz,deleteCart)
 

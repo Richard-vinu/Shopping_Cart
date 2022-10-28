@@ -82,8 +82,9 @@ const createOrder = async (req,res)=>{
       let order = await orderModel.findById(orderId)
 
       if(order.status == 'cancelled')  return res.status(400).send({ status: false, message: " Your Order has been Cancelled Already" })
+      if(order.status == 'completed')  return res.status(400).send({ status: false, message: " Your Order has been completed Already" })
 
-if(status =='cancelled'){
+    if(status =='cancelled'){
     
         if(!order.cancellable) return res.status(400).send({ status: false, message: "Sorry Your Order cannnot  be Cancelled" })
        

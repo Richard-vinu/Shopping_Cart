@@ -7,8 +7,6 @@ aws.config.update({
     region: "ap-south-1"
 })
 
-
-
 let uploadFile= async ( file) =>{
    return new Promise( function(resolve, reject) {
     // this function will upload file to aws and return the link
@@ -16,7 +14,7 @@ let uploadFile= async ( file) =>{
 
     var uploadParams= {
         ACL: "public-read",
-        Bucket: "classroom-training-bucket",  //HERE
+        Bucket: "classroom-training-bucket",  //HEREn
         Key: "abc/" + file.originalname, //HERE 
         Body: file.buffer
     }
@@ -31,9 +29,6 @@ let uploadFile= async ( file) =>{
         return resolve(data.Location)
     })
 
-    // let data= await s3.upload( uploadParams)
-    // if( data) return data.Location
-    // else return "there is an error"
 
    })
 }
